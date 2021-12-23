@@ -1,5 +1,4 @@
-namespace:
-  name: prod
+namespace: prod
 
 service:
   port: 7111

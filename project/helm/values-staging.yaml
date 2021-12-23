@@ -1,5 +1,4 @@
-namespace:
-  name: staging
+namespace: staging
 
 service:
   port: 5111
