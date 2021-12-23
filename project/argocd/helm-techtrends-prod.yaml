@@ -1,0 +1,16 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: techtrends-prod
+  namespce: argocd
+spec:
+  project: techtrends
+  source:
+    helm:
+      valueFiles:
+        - values-prod.yaml
+    path: project/helm
+    repoURL: https://github.com/YorkHe/nd064_course_1
+    targetRevision: HEAD
+
