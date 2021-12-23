@@ -15,11 +15,11 @@ spec:
     metadata:
       labels:
         app: techtrends
-  spec:
-    containers:
-      - image: york42/techtrends:latest
-        name: techtrends
-        resources: {{ .Values.resources }}
-        livenessProbe: {{ .Values.livenessProbe }}
-        redinessProbe: {{ .Values.readinessProbe }}
-        ports: {{ .Values.containerPort }}
+    spec:
+      containers:
+        - image: york42/techtrends:latest
+          name: techtrends
+          resources: {{ .Values.resources }}
+          livenessProbe: {{ .Values.livenessProbe }}
+          redinessProbe: {{ .Values.readinessProbe }}
+          ports: {{ .Values.containerPort }}
