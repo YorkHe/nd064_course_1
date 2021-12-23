@@ -138,5 +138,10 @@ def metrics():
 
 # start the application on port 3111
 if __name__ == "__main__":
+    logging.basicConfig(
+        format='%(asctime)s %(levelname)-8s %(message)s',
+        level=logging.DEBUG,
+        datefmt='%d/%m/%Y %H:%M:%S'
+        )
     app.debug = True
     app.run(host='0.0.0.0', port='3111')
