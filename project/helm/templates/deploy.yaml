@@ -19,7 +19,11 @@ spec:
       containers:
         - image: york42/techtrends:latest
           name: techtrends
-          resources: {{ .Values.resources }}
-          livenessProbe: {{ .Values.livenessProbe }}
-          redinessProbe: {{ .Values.readinessProbe }}
-          ports: {{ .Values.containerPort }}
+          resources: 
+            {{ toYaml .Values.resources | indent 12}}
+          livenessProbe: 
+            {{ toYaml .Values.livenessProbe | indent 12 }}
+          redinessProbe: 
+            {{ toYaml .Values.readinessProbe | indent 12 }}
+          ports: 
+            {{ toYaml .Values.containerPort | indent 13 }}
