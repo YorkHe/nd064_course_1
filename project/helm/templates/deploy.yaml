@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: techtrends
+  namespace: "{{ .Values.namespace }}"
+  labels:
+    app: techtrends
+
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: techtrends
+  template:
+    metadata:
+      labels:
+        app: techtrends
+  spec:
+    containers:
+      - image: york42/techtrends:latest
+        name: techtrends
+        resources: {{ .Values.resources }}
+        livenessProbe: {{ .Values.livenessProbe }}
+        redinessProbe: {{ .Values.readinessProbe }}
+        ports: {{ .Values.containerPort }}
